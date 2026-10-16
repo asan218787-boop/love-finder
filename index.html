@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="my">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fff0f7">
+<title>ငါ့ကို ရည်းစားရှာပေးပါလား? 💗</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap');
+:root{--pink:#ff4d9b;--deep:#e72e83;--ink:#69334f;--muted:#a87892;--pale:#fff0f7;--line:#ffd2e5}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;overflow-x:hidden;background:radial-gradient(circle at 8% 12%,#ffe0ef 0,transparent 26%),radial-gradient(circle at 95% 45%,#ffe5f1 0,transparent 24%),linear-gradient(180deg,#fffafd,#fff0f7);color:var(--ink);font-family:'Nunito','Noto Sans Myanmar',sans-serif}
+button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:focus-visible{outline:3px solid #9e50ff;outline-offset:3px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:13px 17px;border-bottom:1px solid #ffe0ee;background:#fffaffd9;backdrop-filter:blur(10px);font-size:11px;position:relative;z-index:2}
+.logo{font-weight:900;color:var(--deep);letter-spacing:1px}.tag{background:#ffe2ef;padding:7px 10px;border-radius:30px;font-weight:800}
+main{width:min(100% - 24px,690px);margin:auto;padding:25px 0 45px;position:relative;z-index:1}
+.hero{text-align:center;padding:15px 8px 20px}
+.stickers{font-size:32px;letter-spacing:7px;margin-bottom:9px;animation:bob 2.8s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.badge{display:inline-block;border:1px solid #ffd0e5;background:#ffe5f1;color:#d83d83;border-radius:30px;padding:7px 12px;font-size:11px;font-weight:900}
+h1{font-family:'Noto Sans Myanmar','Nunito',sans-serif;color:#ed3989;font-size:clamp(26px,7vw,39px);line-height:1.55;margin:12px 0 8px}
+.hero p{font-size:13px;line-height:1.9;color:var(--muted);margin:0 auto;max-width:420px}
+.card{background:#ffffffdc;border:1px solid var(--line);border-radius:26px;padding:clamp(18px,5vw,28px);box-shadow:0 15px 38px #e34e9417;margin:12px 0}
+.center{text-align:center}.kicker{font-size:10px;letter-spacing:1.7px;font-weight:900;color:#e85b9d}
+h2{font-size:clamp(18px,5vw,24px);line-height:1.75;margin:10px 0;color:#713750}
+.desc{font-size:12px;line-height:1.9;color:var(--muted);margin:4px 0 15px}
+.buttons{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;min-height:66px;position:relative}
+.btn{border:0;border-radius:15px;padding:14px 18px;font-size:13px;font-weight:900;min-height:49px}
+.accept{background:linear-gradient(135deg,#ff80b9,#f32987);color:white;box-shadow:0 5px 0 #d72b78,0 9px 18px #f7258526;position:relative;z-index:2}
+.accept:active{transform:translateY(2px)}
+.decline{background:#fff;color:#cb4b87;border:1px solid #ffc9e1;box-shadow:0 4px 0 #f5d5e5;z-index:30}
+.helper{min-height:24px;margin-top:12px;font-size:11px;color:#b1859d;line-height:1.8}
+#result{display:none;margin-top:21px;padding:22px 15px;border:1px solid #ffb9d7;border-radius:24px;background:linear-gradient(145deg,#fffaff,#ffe4f1);animation:pop .5s ease}
+#result.show{display:block}
+@keyframes pop{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:scale(1)}}
+.party{font-size:32px;letter-spacing:5px;animation:bob 2s infinite}
+#result h2{color:#e92e85;font-size:26px;margin:8px 0}
+#result p{font-size:12px;line-height:2;color:#98617e}
+.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:13px}
+.smallbtn{border:1px solid #ffc4df;border-radius:12px;background:#fff;color:#d63d83;padding:10px 13px;font-size:11px;font-weight:900}
+.primary{background:#f63e91;color:#fff;border-color:#f63e91}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.game{border:1px solid #ffdeec;border-radius:20px;padding:15px 13px;background:#fff9fc;text-align:left;min-height:140px;color:var(--ink);display:flex;flex-direction:column;gap:7px;transition:transform .18s,border-color .18s}
+.game:active{transform:scale(.98)}.game .emoji{font-size:28px}.game strong{font-size:13px;color:#d83d83}.game span:last-child{font-size:11px;color:#a87892;line-height:1.7}.arrow{font-weight:900;color:#e84390!important;margin-top:auto}
+#play{display:none}#play.show{display:block;animation:pop .35s ease}
+.prompt{font-size:14px;font-weight:900;line-height:1.9;margin:12px 0}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.options button{border:1px solid #ffd1e5;border-radius:15px;background:#fff8fc;color:#804460;padding:13px 10px;font-size:12px;line-height:1.7;min-height:53px}
+.options button:hover{background:#ffe6f1}
+.answer{display:none;margin-top:13px;border-radius:16px;background:#fff0f7;padding:13px;font-size:12px;line-height:1.9}.answer.show{display:block}
+.progress{height:7px;background:#ffe0ed;border-radius:20px;margin:13px 0;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ff8bbc,#f32987);transition:width .3s}
+footer{text-align:center;color:#bd91a6;font-size:10px;line-height:1.9;padding:18px 5px}
+.heart{position:fixed;bottom:-35px;z-index:0;pointer-events:none;animation:rise linear forwards;opacity:.65}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:.25s;z-index:100;background:#65334e;color:#fff;padding:11px 15px;border-radius:13px;font-size:12px;max-width:90vw;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:390px){.btn{padding:13px 14px;font-size:12px}.grid{gap:8px}.game{padding:12px 10px}.card{border-radius:22px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="logo">💗 LOVE HELP DESK</div><div class="tag">GEN Z EDITION ✨</div></header>
+<main>
+<section class="hero">
+  <div class="stickers">🧸 💌 🐻</div>
+  <div class="badge">📣 BESTIE ရေ… အကူအညီတောင်းချင်လို့</div>
+  <h1>ငါ့ကို ရည်းစားရှာပေးပါလား? 🥹💗</h1>
+  <p>ငါ့အတွက် ချစ်စရာကောင်းတဲ့သူလေး ရှာပေးပါနော်…<br>မင်းကူညီပေးမှာလားဟင်? 👀💕</p>
+</section>
+
+<section class="card center" id="question">
+  <div class="kicker">PLEASE CHOOSE WISELY 😭</div>
+  <h2>ငါ့ကို ရည်းစားရှာပေးမှာလား? 💘</h2>
+  <p class="desc">အဖြေက အရေးကြီးတယ်နော်… ငါစောင့်နေမယ် 🫣</p>
+  <div class="buttons" id="buttons">
+    <button class="btn accept" id="yes">💗 ရှာပေးမယ်</button>
+    <button class="btn decline" id="no">😭 မရှာပေးဘူး</button>
+  </div>
+  <div class="helper" id="helper" aria-live="polite">အဖြေတစ်ခု ရွေးပေးပါဦး bestie 🥺</div>
+  <div id="result" aria-live="polite">
+    <div class="party">🎉 💖 🥳 💐</div>
+    <div class="badge">OFFICIALLY ACCEPTED ✨</div>
+    <h2>YAYYYY! CONGRATULATIONS!!</h2>
+    <p><strong>ရှာပေးမယ်လို့ လက်ခံလိုက်ပါပြီနော်! 💗</strong><br>ငါ့ရဲ့ future love story အတွက် အခုကစပြီး မင်းက official helper ပဲ 🫶<br>မင်းကို မုန့်ဝယ်ကျွေးရမယ်ထင်တယ် 🍓</p>
+    <div class="actions"><button class="smallbtn primary" id="party">🎊 ထပ်ပျော်မယ်</button><button class="smallbtn" id="share">🔗 သူငယ်ချင်းကိုပို့မယ်</button><button class="smallbtn" id="reset">↻ ပြန်စမယ်</button></div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="kicker">WHEN YOU NEED A DISTRACTION</div>
+  <h2>💿 Bestie Arcade</h2>
+  <p class="desc">စမ်းကြည့်လို့ရတဲ့ mini games လေးတွေ—အဖြေတိုင်းက အပျော်သဘောပါပဲ 💗</p>
+  <div class="grid">
+    <button class="game" data-game="crush"><span class="emoji">💌</span><strong>CRUSH OR PASS?</strong><span>အခြေအနေတွေကြည့်ပြီး crush လုပ်မလား pass လုပ်မလား ရွေးမယ်</span><span class="arrow">PLAY NOW →</span></button>
+    <button class="game" data-game="flag"><span class="emoji">🚦</span><strong>GREEN FLAG CHECK</strong><span>အချစ်ရေး situation လေးတွေမှာ green flag / red flag ခွဲကြည့်မယ်</span><span class="arrow">PLAY NOW →</span></button>
+    <button class="game" data-game="pick"><span class="emoji">💞</span><strong>WOULD YOU PICK?</strong><span>ဒီနှစ်ခုထဲက ကိုယ့်စိတ်ကြိုက် relationship vibe ရွေးမယ်</span><span class="arrow">PLAY NOW →</span></button>
+    <button class="game" data-game="mood"><span class="emoji">🔮</span><strong>LOVE MOOD DROP</strong><span>ဒီနေ့ mood နဲ့ကိုက်တဲ့ cute message ကျပန်းရယူမယ်</span><span class="arrow">PLAY NOW →</span></button>
+  </div>
+</section>
+<section class="card" id="play">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><div class="kicker">MINI GAME IN PROGRESS</div><button class="smallbtn" id="close">✕ CLOSE</button></div>
+  <h2 id="gameTitle">Mini Game</h2><div class="progress"><div class="fill" id="fill"></div></div>
+  <div class="prompt" id="prompt"></div><div class="options" id="options"></div><div class="answer" id="answer" aria-live="polite"></div>
+  <div class="actions"><button class="smallbtn primary" id="next" style="display:none">NEXT ROUND →</button></div>
+</section>
+<footer>💗 For fun only — တကယ်လူရှာပေးတဲ့ service မဟုတ်ပါ။<br>မင်းက single ဖြစ်နေလည်း တန်ဖိုးရှိပြီးသားပါ bestie 🫶</footer>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const $=id=>document.getElementById(id);
+let noCount=0, game=null, round=0, score=0;
+function toast(msg){let t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove('show'),2300)}
+function burst(n=25){let em=['💗','💖','✨','💕','🎉','🌸'];for(let i=0;i<n;i++){let e=document.createElement('span');e.className='heart';e.textContent=em[Math.floor(Math.random()*em.length)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(14+Math.random()*20)+'px';e.style.animationDuration=(3+Math.random()*4)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),7500)}}
+// The "မရှာပေးဘူး" button escapes to a random position across the visible screen.
+const no=$('no');
+function runAway(){
+  const pad=10, w=no.offsetWidth, h=no.offsetHeight;
+  const maxX=Math.max(pad,window.innerWidth-w-pad), maxY=Math.max(pad,window.innerHeight-h-pad);
+  no.style.position='fixed';no.style.left=(pad+Math.random()*(maxX-pad))+'px';no.style.top=(pad+Math.random()*(maxY-pad))+'px';
+  no.style.zIndex='80';noCount++;
+  const lines=['ဟဲ့ဟဲ့ ဖမ်းမမိဘူးနော် 😂','မရှာပေးဘူးဆိုတာ တကယ်ကြီးလား 😭','အဲဒီခလုတ်ကို ဖမ်းနိုင်မှပဲ 😝','bestie ရေ နောက်တစ်ခါ စဉ်းစားပါဦး 💗','ဟားဟား ထပ်လိုက်ခဲ့ 😹'];
+  $('helper').textContent=lines[(noCount-1)%lines.length];
+}
+no.addEventListener('click',e=>{e.preventDefault();runAway()});
+no.addEventListener('pointerenter',()=>{if(noCount>0)runAway()});
+window.addEventListener('resize',()=>{if(no.style.position==='fixed'){no.style.left=Math.min(parseFloat(no.style.left)||10,window.innerWidth-no.offsetWidth-8)+'px';no.style.top=Math.min(parseFloat(no.style.top)||10,window.innerHeight-no.offsetHeight-8)+'px'}});
+$('yes').addEventListener('click',()=>{$('result').classList.add('show');$('helper').textContent='YAY! မင်းက ငါ့ရဲ့ official helper ဖြစ်သွားပြီ 💗';no.style.display='none';$('result').scrollIntoView({behavior:'smooth',block:'center'});burst(38)});
+$('party').addEventListener('click',()=>{burst(45);toast('CONGRATULATIONS AGAINNN 🎉💗')});
+$('reset').addEventListener('click',()=>{noCount=0;no.style.position='';no.style.left='';no.style.top='';no.style.zIndex='';no.style.display='';$('result').classList.remove('show');$('helper').textContent='အဖြေတစ်ခု ရွေးပေးပါဦး bestie 🥺';$('question').scrollIntoView({behavior:'smooth',block:'center'})});
+$('share').addEventListener('click',async()=>{try{if(navigator.share)await navigator.share({title:'ငါ့ကို ရည်းစားရှာပေးပါလား? 💗',text:'ဒီ website လေး လာစမ်းကြည့်ဦး 😂',url:location.href});else{await navigator.clipboard.writeText(location.href);toast('Link copy လုပ်ပြီးပြီ 🔗')}}catch(e){toast('Browser menu ကနေ link ကို copy လုပ်လို့ရတယ်နော်')}});
+const games={
+crush:{title:'💌 CRUSH OR PASS?',rounds:[
+{q:'သူက မင်းပြောတာတွေကို မှတ်မိပြီး နောက်တစ်ခါ ပြန်မေးတယ်။',o:['CRUSH 💗','PASS 👋'],a:['Green flag energy လေးပါ—ဂရုစိုက်နားထောင်တာက ကောင်းတဲ့လက္ခဏာပဲ။','ကိုယ့်စိတ်ကြိုက်မဟုတ်ရင် pass လည်းရတယ်နော်။']},
+{q:'စာပြန်တာနောက်ကျလို့ တောင်းပန်ပြီး အလုပ်များနေတာကို ရှင်းပြတယ်။',o:['CRUSH 💗','PASS 👋'],a:['ရိုးရိုးသားသား ပြောတတ်တာက ကောင်းတဲ့အချက်ပါ။','စာပြန်ချိန်တစ်ခုတည်းနဲ့ မဆုံးဖြတ်ဘဲ pattern ကိုကြည့်ပါ။']},
+{q:'သူက မင်းကို သူငယ်ချင်းတွေနဲ့ မတွေ့ဖို့ တားတယ်။',o:['CRUSH 💗','PASS 👋'],a:['သတိထားရမယ့်အချက်ပါ—မင်းရဲ့သူငယ်ချင်းတွေနဲ့ အချိန်ကုန်ခွင့်ကို လေးစားသင့်တယ်။','Good call! ကိုယ့်လွတ်လပ်ခွင့်ကို လေးစားပေးဖို့ အရေးကြီးတယ်။']}
+]},
+flag:{title:'🚦 GREEN FLAG CHECK',rounds:[
+{q:'မင်း “မလုပ်ချင်ဘူး” လို့ပြောတဲ့အခါ သူက လေးစားတယ်။',o:['💚 GREEN FLAG','🚩 RED FLAG'],a:['မှန်တယ်! Boundaries ကိုလေးစားတာက green flag ပါ။','ဒီတစ်ခုက green flag နော်—no ကိုလေးစားပေးတာက အရေးကြီးတယ်။'],correct:0},
+{q:'သူက မင်းရဲ့ password ကို သက်သေပြဖို့ တောင်းတယ်။',o:['💚 GREEN FLAG','🚩 RED FLAG'],a:['ဒါက red flag ပါ။ Privacy နဲ့ ယုံကြည်မှုကို လေးစားသင့်တယ်။','မှန်တယ်! ကိုယ်ရေးကိုယ်တာ privacy ကို ထိန်းသိမ်းခွင့်ရှိတယ်။'],correct:1},
+{q:'အမှားလုပ်မိတဲ့အခါ တောင်းပန်ပြီး ပြင်ဖို့ကြိုးစားတယ်။',o:['💚 GREEN FLAG','🚩 RED FLAG'],a:['မှန်တယ်! တာဝန်ယူပြီး ပြင်ဆင်ဖို့ကြိုးစားတာ green flag ပါ။','ဒီတစ်ခုက green flag ဖြစ်တယ်—တာဝန်ယူတတ်ဖို့ အရေးကြီးတယ်။'],correct:0}
+]},
+pick:{title:'💞 WOULD YOU PICK?',rounds:[
+{q:'Date vibe ရွေးလိုက်!',o:['🍓 လမ်းလျှောက်ရင်း စကားပြော','🎮 Game ဆော့ရင်း ရယ်မော'],a:['Soft romantic vibe! အေးအေးဆေးဆေး စကားပြောရတာ ကြိုက်တယ်နော် 💗','Fun bestie-to-lover vibe လေးပဲ 😂']},
+{q:'ကိုယ့်အတွက် ဘယ်ဟာပိုအရေးကြီး?',o:['💬 ရိုးရိုးသားသား ပြောဆိုမှု','🫶 အချိန်ပေးပြီး ဂရုစိုက်မှု'],a:['Communication matters! စကားပြောလို့ရတာ အရေးကြီးတယ်။','Effort matters! အချိန်ပေးပြီး ဂရုစိုက်တာကို တန်ဖိုးထားတယ်။']},
+{q:'Ideal relationship က…',o:['🌱 အတူတူတိုးတက်တာ','😂 အတူတူပျော်ရွှင်တာ'],a:['Healthy growth vibe! တစ်ယောက်ကိုတစ်ယောက် support ပေးချင်တယ်။','Joyful vibe! ရယ်မောပျော်ရွှင်ရတာက မင်းအတွက် အရေးကြီးတယ်။']}
+]},
+mood:{title:'🔮 LOVE MOOD DROP',rounds:[
+{q:'ဒီနေ့ မင်းအတွက် message လေး ဖွင့်မလား?',o:['✨ DROP MY MOOD','💗 ONE MORE'],a:['မင်းကို တန်ဖိုးထားတဲ့သူတွေကြားမှာ မင်းလည်း အေးချမ်းစွာနေနိုင်ပါစေ 💗','အလျင်မလိုနဲ့ bestie—ကိုယ့်အတွက်ကောင်းတဲ့အရာတွေကို ကိုယ့်အချိန်နဲ့ကိုယ် ရှာတွေ့နိုင်တယ် 🌷']},
+{q:'ဒီနေ့ ကိုယ့်ကိုယ်ကို ဘာပြောပေးမလဲ?',o:['🫶 I GOT THIS','🌸 I DESERVE GOOD THINGS'],a:['အရာအားလုံးကို ဒီနေ့တစ်ရက်တည်း ပြီးပြည့်စုံအောင်လုပ်စရာမလိုဘူး။ တစ်ဆင့်ချင်းသွားမယ်။','မင်းက respect နဲ့ kindness ကို ရထိုက်တယ်—ကိုယ့်တန်ဖိုးကို မမေ့နဲ့ 💗']},
+{q:'နောက်ဆုံး mood boost လေး?',o:['💌 SEND LOVE','🎉 BOOST ME'],a:['မင်းရဲ့ story က အခုမှစတာပါ။ အခန်းသစ်တိုင်းမှာ အခွင့်အရေးအသစ်ရှိတယ် 📖','Bestie, breathe in… breathe out… မင်းလုပ်နိုင်တယ်! ✨']}
+]}
+};
+function startGame(key){game=games[key];round=0;score=0;$('play').classList.add('show');$('gameTitle').textContent=game.title;$('play').scrollIntoView({behavior:'smooth',block:'center'});renderRound()}
+function renderRound(){$('answer').classList.remove('show');$('next').style.display='none';$('options').innerHTML='';const r=game.rounds[round];$('prompt').textContent=r.q;$('fill').style.width=(round/game.rounds.length*100)+'%';r.o.forEach((label,i)=>{let b=document.createElement('button');b.textContent=label;b.onclick=()=>{[...$('options').children].forEach(x=>x.disabled=true);$('answer').textContent=r.a[i]||r.a[0];$('answer').classList.add('show');score++;$('fill').style.width=((round+1)/game.rounds.length*100)+'%';if(round<game.rounds.length-1){$('next').style.display='inline-block';$('next').textContent='NEXT ROUND →'}else{$('next').style.display='inline-block';$('next').textContent='PLAY AGAIN ↻';$('answer').textContent+='  ✨ Round ပြီးပြီ! ပြန်ကစားချင်ရင် Play Again ကိုနှိပ်ပါ။'}burst(5)};$('options').appendChild(b)})}
+$('next').onclick=()=>{if(round<game.rounds.length-1)round++;else round=0;renderRound()};
+document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>startGame(b.dataset.game));
+$('close').onclick=()=>{$('play').classList.remove('show')};
+setInterval(()=>{if(document.visibilityState!=='visible'||Math.random()<.45)return;let e=document.createElement('span');e.className='heart';e.textContent=['💗','♡','✨'][Math.floor(Math.random()*3)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(12+Math.random()*10)+'px';e.style.animationDuration='7s';document.body.appendChild(e);setTimeout(()=>e.remove(),7200)},1900);
+</script>
+</body></html>
